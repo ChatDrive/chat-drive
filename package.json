@@ -6,7 +6,7 @@
   "type": "module",
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog-zh"
+      "path": "cz-conventional-changelog-zh"
     }
   },
   "scripts": {
