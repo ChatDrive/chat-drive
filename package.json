@@ -3,32 +3,29 @@
   "private": true,
   "version": "0.0.0",
   "description": "A cloud storage platform",
-  "type": "module",
+  "type": "commonjs",
   "config": {
     "commitizen": {
-      "path": "cz-conventional-changelog-zh"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
+      "path": "cz-customizable"
     }
   },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky install",
+    "commit": "git add . && git cz"
   },
   "dependencies": {
     "vue": "^3.3.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
-    "@commitlint/config-conventional": "^17.7.0",
     "@vitejs/plugin-vue": "^4.2.3",
     "commitizen": "^4.3.0",
-    "conventional-changelog-cli": "^4.1.0",
-    "cz-conventional-changelog-zh": "^0.0.2",
+    "commitlint-config-cz": "^0.13.3",
+    "commitlint-config-git-commit-emoji": "^1.0.0",
+    "cz-customizable": "^7.0.0",
     "husky": "^8.0.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
