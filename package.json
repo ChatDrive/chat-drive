@@ -17,7 +17,8 @@
     "commit": "git add . && git cz",
     "changelog": "npx conventional-changelog -p gitmoji-config -i CHANGELOG.md -s -r 0",
     "eslint": "npx eslint src/** --ext .vue,.js,.ts,.jsx,.tsx --fix",
-    "format": "npx prettier --write src/**/*.{vue,js,ts,jsx,tsx,css} "
+    "format": "npx prettier --write src/**/*.{vue,js,ts,jsx,tsx,css} ",
+    "stylelint": "npx stylelint src/**/*.{css,vue} --fix"
   },
   "dependencies": {
     "vue": "^3.3.4"
@@ -40,6 +41,11 @@
     "husky": "^8.0.3",
     "lint-staged": "^15.0.2",
     "prettier": "^3.0.3",
+    "stylelint": "^14.x",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-standard": "^28",
+    "stylelint-config-standard-vue": "^1.0.0",
+    "stylelint-order": "^6.0.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vue-eslint-parser": "^9.3.2",
