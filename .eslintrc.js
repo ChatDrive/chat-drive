@@ -5,17 +5,29 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    "eslint:recommended",
-    "plugin:vue/vue3-essential",
-    "plugin:@typescript-eslint/recommended",
-    "prettier",
+    'eslint-config-airbnb-base',
+    'eslint:recommended',
+    'plugin:vue/vue3-essential',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
   ],
   overrides: [],
-  parser: "vue-eslint-parser",
+  parser: 'vue-eslint-parser',
   parserOptions: {
-    ecmaVersion: "latest",
-    parser: "@typescript-eslint/parser",
+    ecmaVersion: 'latest',
+    parser: '@typescript-eslint/parser',
   },
-  plugins: ["vue", "@typescript-eslint", "prettier"],
-  rules: {},
+  plugins: ['vue', '@typescript-eslint', 'prettier'],
+  rules: {
+    '@typescript-eslint/ban-types': [
+      'error',
+      {
+        extendDefaults: true,
+        types: {
+          '{}': false,
+        },
+      },
+    ],
+    '@typescript-eslint/no-explicit-any': 'off',
+  },
 };
