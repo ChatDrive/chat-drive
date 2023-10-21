@@ -11,10 +11,11 @@ module.exports = {
     "prettier",
   ],
   overrides: [],
-  parser: "@typescript-eslint/parser",
+  parser: "vue-eslint-parser",
   parserOptions: {
     ecmaVersion: "latest",
+    parser: "@typescript-eslint/parser",
   },
-  plugins: ["vue", "@typescript-eslint"],
+  plugins: ["vue", "@typescript-eslint", "prettier"],
   rules: {},
 };

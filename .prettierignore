@@ -1,12 +1,12 @@
 # Ignore artifacts
-build
-dist
+/dist/*
 .husky
 .vscode
 public
-**/node_modules
+/node_modules/**
 
 # Ignore files
 **/.git
 **/.svn
 **/.hg
+**/.yaml
