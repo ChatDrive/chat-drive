@@ -5,8 +5,7 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    'eslint-config-airbnb-base',
-    'eslint:recommended',
+    'airbnb-base',
     'plugin:vue/vue3-essential',
     'plugin:@typescript-eslint/recommended',
     'prettier',

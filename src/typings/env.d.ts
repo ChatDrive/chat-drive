@@ -38,6 +38,10 @@ interface ImportMetaEnv {
   readonly VITE_AUTH_ROUTE_MODE: 'static' | 'dynamic';
   /** 路由首页路径 */
   readonly VITE_ROUTE_HOME_PATH: string;
+  /** hash路由模式 */
+  readonly VITE_HASH_ROUTE?: 'Y' | 'N';
+  /** 是否应用自动生成路由插件 */
+  readonly VITE_ROUTE_PLUGIN?: 'Y' | 'N';
   /** iconify图标作为组件的前缀 */
   readonly VITE_ICON_PREFIX: string;
   /**
@@ -46,4 +50,29 @@ interface ImportMetaEnv {
    * - 例如：icon-local
    */
   readonly VITE_ICON_LOCAL_PREFIX: string;
+  /** 后端服务环境类型 */
+  readonly VITE_SERVICE_ENV?: ServiceEnvType;
+  /** 是否开启请求代理 */
+  readonly VITE_HTTP_PROXY?: 'Y' | 'N';
+  /** 是否开启打包文件大小结果分析 */
+  readonly VITE_VISUALIZER?: 'Y' | 'N';
+  /** 是否开启打包压缩 */
+  readonly VITE_COMPRESS?: 'Y' | 'N';
+  /** 压缩算法类型 */
+  readonly VITE_COMPRESS_TYPE?:
+    | 'gzip'
+    | 'brotliCompress'
+    | 'deflate'
+    | 'deflateRaw';
+  /** 是否应用pwa */
+  readonly VITE_PWA?: 'Y' | 'N';
+  /**
+   * 是否开启生产模式下的mock
+   * @description 生产模式下会拦截XHR, 导致无法获取response
+   */
+  readonly VITE_PROD_MOCK?: 'Y' | 'N';
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
 }
