@@ -18,7 +18,7 @@ interface ServiceEnvConfigWithProxyPattern extends ServiceEnvConfig {
    * - 与后端请求地址的前缀无关
    * - 有多个后端请求实例时，需要创建不同的值
    */
-  proxyPattern: '/proxy-pattern';
+  proxyPattern: '/api';
 }
 
 interface ImportMetaEnv {
