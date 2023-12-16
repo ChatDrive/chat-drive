@@ -1,6 +1,6 @@
 import { VitePWA } from 'vite-plugin-pwa';
 
-export default () =>
+export default function setupVitePwa() {
   VitePWA({
     registerType: 'autoUpdate',
     includeAssets: ['favicon.ico'],
@@ -28,3 +28,4 @@ export default () =>
       ],
     },
   });
+}
