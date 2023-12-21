@@ -12,7 +12,7 @@ import pwa from './pwa';
  * vite插件配置
  * @param viteEnv - 环境变量配置
  */
-export default function setupVitePlugins(
+export function setupVitePlugins(
   viteEnv: ImportMetaEnv,
 ): PluginOption | PluginOption[] {
   const plugins = [

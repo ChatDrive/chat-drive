@@ -4,7 +4,7 @@ import path from 'path';
  * 获取项目路径
  * @description 末尾不带斜杠
  */
-function getRootPath() {
+export function getRootPath() {
   return path.resolve(process.cwd());
 }
 
