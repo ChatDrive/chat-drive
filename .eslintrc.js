@@ -43,5 +43,6 @@ module.exports = {
         '': 'never',
       },
     ],
+    'import/no-unresolved': ['error', { ignore: ['^virtual:'] }],
   },
 };

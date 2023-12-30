@@ -12,6 +12,8 @@ declare module 'vue' {
     IconLocalNoIcon: (typeof import('~icons/local/no-icon'))['default'];
     'IconMdi:emoticon': (typeof import('~icons/mdi/emoticon'))['default'];
     IconMdiEmoticon: (typeof import('~icons/mdi/emoticon'))['default'];
+    NButton: (typeof import('naive-ui'))['NButton'];
+    NCard: (typeof import('naive-ui'))['NCard'];
     RouterLink: (typeof import('vue-router'))['RouterLink'];
     RouterView: (typeof import('vue-router'))['RouterView'];
     SvgIcon: (typeof import('./../components/custom/svg-icon.vue'))['default'];

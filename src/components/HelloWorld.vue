@@ -17,6 +17,10 @@ const count = ref(0);
   <icon-mdi:emoticon style="font-size: 24px; color: #f00" />
   <icon-local-no-icon class="text-24px text-red" />
   <svg-icon icon="mdi-emoticon" />
+  <n-button>naive-ui</n-button>
+  <n-card title="按钮" :bordered="true" class="h-full rounded-8px shadow-sm">
+    asdasdasd
+  </n-card>
 </template>
 
 <style scoped>
