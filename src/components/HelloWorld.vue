@@ -15,6 +15,7 @@ const count = ref(0);
   </div>
   <icon-mdi-emoticon class="text-24px text-red" />
   <icon-mdi:emoticon style="font-size: 24px; color: #f00" />
+  <icon-mdi:account-box />
   <icon-local-no-icon class="text-24px text-red" />
   <svg-icon icon="mdi-emoticon" />
   <n-button>naive-ui</n-button>

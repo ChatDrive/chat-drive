@@ -10,6 +10,7 @@ declare module 'vue' {
     HelloWorld: (typeof import('./../components/HelloWorld.vue'))['default'];
     'IconBi:5Square': (typeof import('~icons/bi/5-square'))['default'];
     IconLocalNoIcon: (typeof import('~icons/local/no-icon'))['default'];
+    'IconMdi:accountBox': (typeof import('~icons/mdi/account-box'))['default'];
     'IconMdi:emoticon': (typeof import('~icons/mdi/emoticon'))['default'];
     IconMdiEmoticon: (typeof import('~icons/mdi/emoticon'))['default'];
     NButton: (typeof import('naive-ui'))['NButton'];
