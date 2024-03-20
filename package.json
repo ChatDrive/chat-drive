@@ -22,12 +22,15 @@
   },
   "dependencies": {
     "dayjs": "^1.11.10",
+    "lodash-es": "^4.17.21",
+    "pinia": "^2.1.7",
     "vue": "^3.3.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
     "@iconify/json": "^2.2.159",
     "@iconify/vue": "^4.1.1",
+    "@types/lodash-es": "^4.17.12",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.8.0",
     "@unocss/preset-uno": "^0.58.2",
@@ -43,6 +46,8 @@
     "eslint": "^8.51.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.0.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-vue": "^9.17.0",
     "husky": "^8.0.3",
