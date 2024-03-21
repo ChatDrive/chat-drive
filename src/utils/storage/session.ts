@@ -37,4 +37,4 @@ function createSessionStorage<
   };
 }
 
-export const seeionStg = createSessionStorage();
+export const sessionStg = createSessionStorage();
