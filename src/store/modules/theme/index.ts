@@ -1,11 +1,11 @@
 import { defineStore } from 'pinia';
-// import { darkTheme } from 'naive-ui';
-// import { sessionStg } from '@/utils';
+import { darkTheme } from 'naive-ui';
+import { sessionStg } from '@/utils';
 import { getNaiveThemeOverrides, initThemeSettings } from './helpers';
 
 type ThemeState = Theme.Setting;
 
-defineStore('theme-store', {
+export const useThemeStore = defineStore('theme-store', {
   state: (): ThemeState => initThemeSettings(),
   getters: {
     /** naiveUI的主题配置 */
@@ -16,6 +16,164 @@ defineStore('theme-store', {
       });
 
       return overrides;
+    },
+    /** naiveUI暗黑主题 */
+    naiveTheme(state) {
+      return state.darkMode ? darkTheme : undefined;
+    },
+    /** 页面动画模式 */
+    pageAnimateMode(state) {
+      return state.page.animate ? state.page.animate : undefined;
+    },
+  },
+  actions: {
+    /** 重置theme状态 */
+    resetThemeStore() {
+      sessionStg.remove('themeSettings');
+      this.$reset();
+    },
+    /** 缓存主题配置 */
+    cacheThemeSettings() {
+      const isProd = import.meta.env;
+      if (isProd) sessionStg.set('themeSettings', this.$state);
+    },
+    /** 设置暗黑模式 */
+    setDarkMode(darkMode: boolean) {
+      this.darkMode = darkMode;
+    },
+    /** 设置是否自动跟随系统主题 */
+    setFollowSystemTheme(visible: boolean) {
+      this.followSystemTheme = visible;
+    },
+    /** 设置是否自定义暗黑动画过渡 */
+    setIsCustomizeDarkModeTransition(isCustomize: boolean) {
+      this.isCustomizeDarkModeTransition = isCustomize;
+    },
+    /** 设置自动跟随操作系统主题 */
+    setAutoFollowSystemMode(darkMode: boolean) {
+      if (this.followSystemTheme) this.darkMode = darkMode;
+    },
+    /** 切换/关闭 暗黑模式 */
+    toggleDarkMode() {
+      this.darkMode = !this.darkMode;
+    },
+    /** 设置布局最小宽度 */
+    setLayoutMinWidth(minWidth: number) {
+      this.layout.minWidth = minWidth;
+    },
+    /** 设置布局模式 */
+    setLayoutMode(mode: UnionKey.ThemeLayoutMode) {
+      this.layout.mode = mode;
+    },
+    /** 设置滚动模式 */
+    setScrollMode(mode: UnionKey.ThemeScrollMode) {
+      this.scrollMode = mode;
+    },
+    /** 设置侧边栏是否反转色 */
+    setSiderInverted(isInverted: boolean) {
+      this.sider.inverted = isInverted;
+    },
+    /** 设置头部是否反转色 */
+    setHeaderInverted(isInverted: boolean) {
+      this.header.inverted = isInverted;
+    },
+    /** 设置系统主题颜色 */
+    setThemeColor(themeColor: string) {
+      this.themeColor = themeColor;
+    },
+    /** 设置是否固定头部和多页签 */
+    setIsFixedHeaderAndTab(isFixed: boolean) {
+      this.fixedHeaderAndTab = isFixed;
+    },
+    /** 设置重载按钮可见状态 */
+    setReloadVisible(visible: boolean) {
+      this.showReload = visible;
+    },
+    /** 设置头部高度 */
+    setHeaderHeight(height: number | null) {
+      if (height) this.header.height = height;
+    },
+    /** 设置头部面包屑可见 */
+    setHeaderCrumbVisible(visible: boolean) {
+      this.header.crumb.visible = visible;
+    },
+    /** 设置头部面包屑图标可见 */
+    setHeaderCrumbIconVisible(visible: boolean) {
+      this.header.crumb.showIcon = visible;
+    },
+    /** 设置多页签可见 */
+    setTabVisible(visible: boolean) {
+      this.tab.visible = visible;
+    },
+    /** 设置多页签高度 */
+    setTabHeight(height: number | null) {
+      if (height) {
+        this.tab.height = height;
+      }
+    },
+    /** 设置多页签风格 */
+    setTabMode(mode: UnionKey.ThemeTabMode) {
+      this.tab.mode = mode;
+    },
+    /** 设置多页签缓存 */
+    setTabIsCache(isCache: boolean) {
+      this.tab.isCache = isCache;
+    },
+    /** 设置侧边栏宽度 */
+    setSiderWidth(width: number | null) {
+      if (width) {
+        this.sider.width = width;
+      }
+    },
+    /** 设置侧边栏折叠时的宽度 */
+    setSiderCollapseWidth(width: number) {
+      this.sider.collapsedWidth = width;
+    },
+    /** vertical-mix模式下侧边栏宽度 */
+    setMixSiderWidth(width: number | null) {
+      if (width) {
+        this.sider.mixWidth = width;
+      }
+    },
+    /** vertical-mix模式下侧边栏折叠时的宽度 */
+    setMixSiderCollapsedWidth(width: number) {
+      this.sider.mixCollapsedWidth = width;
+    },
+    /** vertical-mix模式下侧边栏展示子菜单的宽度 */
+    setMixSiderChildMenuWidth(width: number) {
+      this.sider.mixChildMenuWidth = width;
+    },
+    /** 设置水平模式的菜单位置 */
+    setHorizontalMenuPosition(position: UnionKey.ThemeHorizontalMenuPosition) {
+      this.menu.horizontalPosition = position;
+    },
+    /** 设置底部是否显示 */
+    setFooterVisible(isVisible: boolean) {
+      this.footer.visible = isVisible;
+    },
+    /** 设置底部是否固定 */
+    setFooterIsFixed(isFixed: boolean) {
+      this.footer.fixed = isFixed;
+    },
+    /** 设置底部是否居右 */
+    setFooterIsRight(right: boolean) {
+      this.footer.right = right;
+    },
+    /** 设置底部高度 */
+    setFooterHeight(height: number) {
+      this.footer.height = height;
+    },
+    /** 设置底部是否反转色 */
+    setFooterInverted(inverted: boolean) {
+      this.footer.inverted = inverted;
+    },
+    /** 设置切换页面时是否过渡动画 */
+    setPageIsAnimate(animate: boolean) {
+      this.page.animate = animate;
+    },
+    /** 设置页面过渡动画类型 */
+    setPageAnimateMode(mode: UnionKey.ThemeAnimateMode) {
+      this.page.animateMode = mode;
     },
   },
 });

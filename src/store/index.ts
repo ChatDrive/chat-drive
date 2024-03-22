@@ -10,5 +10,5 @@ export function setupStore(app: App) {
   app.use(store);
 }
 
-// export * from './modules';
-// export * from './subscribe';
+export * from './modules';
+export * from './subscribe';
