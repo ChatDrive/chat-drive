@@ -26,6 +26,9 @@ dependencies:
   vue:
     specifier: ^3.3.4
     version: registry.npmmirror.com/vue@3.3.4
+  vue-router:
+    specifier: '4'
+    version: 4.3.0(vue@3.3.4)
 
 devDependencies:
   '@commitlint/cli':
@@ -6018,6 +6021,19 @@ packages:
       vue: registry.npmmirror.com/vue@3.3.4
     dev: false
 
+  /vue-router@4.3.0(vue@3.3.4):
+    resolution:
+      {
+        integrity: sha512-dqUcs8tUeG+ssgWhcPbjHvazML16Oga5w34uCUmsk7i0BcnskoLGwjpa15fqMr2Fa5JgVBrdL2MEgqz6XZ/6IQ==,
+        tarball: https://registry.npmmirror.com/vue-router/-/vue-router-4.3.0.tgz,
+      }
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': 6.6.1
+      vue: registry.npmmirror.com/vue@3.3.4
+    dev: false
+
   /vueuc@0.4.58(vue@3.3.4):
     resolution:
       {
@@ -6206,6 +6222,7 @@ packages:
         integrity: sha512-MEYM1JTn/qiC3DbpvP2BVhyIH+dV/5BjHk756u9VbwuAhu0QHyKscTnisQuz21lfRpOwiS9z4XdqeVAKol0bzg==,
         tarball: https://registry.npmmirror.com/workbox-google-analytics/-/workbox-google-analytics-7.0.0.tgz,
       }
+    deprecated: It is not compatible with newer versions of GA starting with v4, as long as you are using GAv3 it should be ok, but the package is not longer being maintained
     dependencies:
       workbox-background-sync: 7.0.0
       workbox-core: 7.0.0
