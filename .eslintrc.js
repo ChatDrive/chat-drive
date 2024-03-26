@@ -45,5 +45,6 @@ module.exports = {
       },
     ],
     'import/no-unresolved': ['error', { ignore: ['^virtual:'] }],
+    'vue/multi-word-component-names': 'off',
   },
 };

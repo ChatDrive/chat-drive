@@ -64,6 +64,34 @@ declare namespace AuthRoute {
     /** 是否固定在tab卡不可关闭 */
     affix?: boolean;
   }
+
+  type Route<K extends AllRouteKey = AllRouteKey> = K extends AllRouteKey
+    ? {
+        /** 路由名称(路由唯一标识) */
+        name: K;
+        /** 路由路径 */
+        path: AuthRouteUtils.GetRoutePath<K>;
+        /** 路由重定向 */
+        redirect?: AuthRouteUtils.GetRoutePath;
+        /**
+         * 路由组件
+         * - basic: 基础布局，具有公共部分的布局
+         * - blank: 空白布局
+         * - multi: 多级路由布局(三级路由或三级以上时，除第一级路由和最后一级路由，其余的采用该布局)
+         * - self: 作为子路由，使用自身的布局(作为最后一级路由，没有子路由)
+         */
+        component?: RouteComponentType;
+        /** 子路由 */
+        children: Route[];
+        /** 路由描述 */
+        meta: RouteMeta<RoutePath<K>>;
+      } & Omit<
+        import('vue-router').RouteRecordRaw,
+        'name' | 'path' | 'redirect' | 'component' | 'children' | 'meta'
+      >
+    : never;
+  /** 前端导入的路由模块 */
+  type RouteModule = Record<string, { default: Route }>;
 }
 
 declare namespace AuthRouteUtils {
